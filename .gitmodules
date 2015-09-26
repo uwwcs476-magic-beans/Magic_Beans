@@ -1,0 +1,3 @@
+[submodule "Open-LaTeX-Studio"]
+	path = Open-LaTeX-Studio
+	url = https://github.com/sebbrudzinski/Open-LaTeX-Studio.git
