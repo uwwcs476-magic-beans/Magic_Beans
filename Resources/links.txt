@@ -1,0 +1,8 @@
+Official Netbeans Platform Plugin Guide:
+https://platform.netbeans.org/tutorials/nbm-google.html
+
+LaTeX project official website
+https://latex-project.org/
+
+LaTeX introduction document
+http://www.techscribe.co.uk/ta/latex-introduction.pdf
