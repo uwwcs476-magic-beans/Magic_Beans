@@ -29,10 +29,11 @@ import org.openide.util.NbBundle.Messages;
 public final class OpenMagicBeans implements ActionListener {
     public static boolean open = false;
     private static MBFrame frame = new MBFrame();
+    private static MBTopComponent component = new MBTopComponent();
     @Override
     public void actionPerformed(ActionEvent e) {
         // TODO implement action body
         open = !open;
-        frame.show();
+        component.open();
     }
 }
