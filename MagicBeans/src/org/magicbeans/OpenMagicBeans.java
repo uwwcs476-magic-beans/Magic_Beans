@@ -18,7 +18,7 @@ import org.openide.util.NbBundle.Messages;
         id = "org.magicbeans.OpenMagicBeans"
 )
 @ActionRegistration(
-        iconBase = "org/magicbeans/sb-v-track.png",
+        iconBase = "org/magicbeans/MB_Button.png",
         displayName = "#CTL_OpenMagicBeans"
 )
 @ActionReferences({
