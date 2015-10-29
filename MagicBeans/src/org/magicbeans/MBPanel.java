@@ -9,12 +9,12 @@ package org.magicbeans;
  *
  * @author Alex
  */
-public class MBpanel extends javax.swing.JPanel {
+public class MBPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form MBpanel
      */
-    public MBpanel() {
+    public MBPanel() {
         initComponents();
     }
 
@@ -29,7 +29,7 @@ public class MBpanel extends javax.swing.JPanel {
 
         jButton1 = new javax.swing.JButton();
 
-        org.openide.awt.Mnemonics.setLocalizedText(jButton1, org.openide.util.NbBundle.getMessage(MBpanel.class, "MBpanel.jButton1.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jButton1, org.openide.util.NbBundle.getMessage(MBPanel.class, "MBPanel.jButton1.text")); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

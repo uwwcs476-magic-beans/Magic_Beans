@@ -27,9 +27,12 @@ import org.openide.util.NbBundle.Messages;
 })
 @Messages("CTL_OpenMagicBeans=Open Magic Beans")
 public final class OpenMagicBeans implements ActionListener {
-
+    public static boolean open = false;
+    private static MBFrame frame = new MBFrame();
     @Override
     public void actionPerformed(ActionEvent e) {
         // TODO implement action body
+        open = !open;
+        frame.show();
     }
 }
