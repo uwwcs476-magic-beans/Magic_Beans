@@ -16,7 +16,6 @@ import java.util.prefs.PreferenceChangeListener;
 import java.util.prefs.Preferences;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.Document;
-import latexstudio.editor.remote.DbxState;
 import latexstudio.editor.util.ApplicationUtils;
 import org.apache.commons.io.IOUtils;
 import org.fife.ui.autocomplete.AutoCompletion;
@@ -59,7 +58,6 @@ public final class EditorTopComponent extends TopComponent {
 
     private boolean dirty = false;
     private File currentFile;
-    private DbxState dbxState;
     private String latexPath;
 
     private static final int AUTO_COMPLETE_DELAY = 700;
@@ -200,14 +198,6 @@ public final class EditorTopComponent extends TopComponent {
     public void setCurrentFile(File currentFile) {
         this.currentFile = currentFile;
         setDisplayName(currentFile.getName());
-    }
-
-    public DbxState getDbxState() {
-        return dbxState;
-    }
-
-    public void setDbxState(DbxState dbxState) {
-        this.dbxState = dbxState;
     }
 
     public String getLatexPath() {

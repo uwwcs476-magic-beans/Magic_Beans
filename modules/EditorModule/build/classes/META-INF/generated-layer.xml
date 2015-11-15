@@ -58,44 +58,6 @@
                 <attr boolvalue="false" name="noIconInMenu"/>
             </file>
         </folder>
-        <folder name="Remote">
-            <file name="latexstudio-editor-remote-ConnectDropbox.instance">
-                <!--latexstudio.editor.remote.ConnectDropbox-->
-                <attr
-                    bundlevalue="latexstudio.editor.remote.Bundle#CTL_ConnectDropbox" name="displayName"/>
-                <attr
-                    methodvalue="org.openide.awt.Actions.alwaysEnabled" name="instanceCreate"/>
-                <attr name="delegate" newvalue="latexstudio.editor.remote.ConnectDropbox"/>
-                <attr boolvalue="false" name="noIconInMenu"/>
-            </file>
-            <file name="latexstudio-editor-remote-OpenFromDropbox.instance">
-                <!--latexstudio.editor.remote.OpenFromDropbox-->
-                <attr
-                    bundlevalue="latexstudio.editor.remote.Bundle#CTL_OpenFromDropbox" name="displayName"/>
-                <attr
-                    methodvalue="org.openide.awt.Actions.alwaysEnabled" name="instanceCreate"/>
-                <attr name="delegate" newvalue="latexstudio.editor.remote.OpenFromDropbox"/>
-                <attr boolvalue="false" name="noIconInMenu"/>
-            </file>
-            <file name="latexstudio-editor-remote-SaveProgress.instance">
-                <!--latexstudio.editor.remote.SaveProgress-->
-                <attr
-                    bundlevalue="latexstudio.editor.remote.Bundle#CTL_SaveProgress" name="displayName"/>
-                <attr
-                    methodvalue="org.openide.awt.Actions.alwaysEnabled" name="instanceCreate"/>
-                <attr name="delegate" newvalue="latexstudio.editor.remote.SaveProgress"/>
-                <attr boolvalue="false" name="noIconInMenu"/>
-            </file>
-            <file name="latexstudio-editor-remote-UploadToDropbox.instance">
-                <!--latexstudio.editor.remote.UploadToDropbox-->
-                <attr
-                    bundlevalue="latexstudio.editor.remote.Bundle#CTL_UploadToDropbox" name="displayName"/>
-                <attr
-                    methodvalue="org.openide.awt.Actions.alwaysEnabled" name="instanceCreate"/>
-                <attr name="delegate" newvalue="latexstudio.editor.remote.UploadToDropbox"/>
-                <attr boolvalue="false" name="noIconInMenu"/>
-            </file>
-        </folder>
         <folder name="Edit">
             <file name="latexstudio-editor-Redo.instance">
                 <!--latexstudio.editor.toolbar.Redo-->
@@ -129,15 +91,6 @@
             </file>
         </folder>
         <folder name="Window">
-            <file name="latexstudio-editor-DropboxRevisionsTopComponent.instance">
-                <!--latexstudio.editor.DropboxRevisionsTopComponent-->
-                <attr
-                    methodvalue="org.openide.windows.TopComponent.openAction" name="instanceCreate"/>
-                <attr name="component" newvalue="latexstudio.editor.DropboxRevisionsTopComponent"/>
-                <attr name="preferredID" stringvalue="DropboxRevisionsTopComponent"/>
-                <attr
-                    bundlevalue="latexstudio.editor.Bundle#CTL_DropboxRevisionsAction" name="displayName"/>
-            </file>
             <file name="latexstudio-editor-EditorTopComponent.instance">
                 <!--latexstudio.editor.EditorTopComponent-->
                 <attr
@@ -165,15 +118,6 @@
                 <attr
                     bundlevalue="latexstudio.editor.Bundle#CTL_PDFViewerAction" name="displayName"/>
             </file>
-            <file name="latexstudio-editor-RevisionDisplayTopComponent.instance">
-                <!--latexstudio.editor.RevisionDisplayTopComponent-->
-                <attr
-                    methodvalue="org.openide.windows.TopComponent.openAction" name="instanceCreate"/>
-                <attr name="component" newvalue="latexstudio.editor.RevisionDisplayTopComponent"/>
-                <attr name="preferredID" stringvalue="RevisionDisplayTopComponent"/>
-                <attr
-                    bundlevalue="latexstudio.editor.Bundle#CTL_RevisionDisplayAction" name="displayName"/>
-            </file>
         </folder>
     </folder>
     <folder name="Menu">
@@ -199,33 +143,6 @@
                 <attr intvalue="1300" name="position"/>
             </file>
         </folder>
-        <folder name="Remote">
-            <file name="latexstudio-editor-remote-ConnectDropbox.shadow">
-                <!--latexstudio.editor.remote.ConnectDropbox-->
-                <attr name="originalFile" stringvalue="Actions/Remote/latexstudio-editor-remote-ConnectDropbox.instance"/>
-                <attr intvalue="3333" name="position"/>
-            </file>
-            <file name="latexstudio-editor-remote-ConnectDropbox-separatorAfter.instance">
-                <!--latexstudio.editor.remote.ConnectDropbox-->
-                <attr name="instanceCreate" newvalue="javax.swing.JSeparator"/>
-                <attr intvalue="3383" name="position"/>
-            </file>
-            <file name="latexstudio-editor-remote-OpenFromDropbox.shadow">
-                <!--latexstudio.editor.remote.OpenFromDropbox-->
-                <attr name="originalFile" stringvalue="Actions/Remote/latexstudio-editor-remote-OpenFromDropbox.instance"/>
-                <attr intvalue="3408" name="position"/>
-            </file>
-            <file name="latexstudio-editor-remote-SaveProgress.shadow">
-                <!--latexstudio.editor.remote.SaveProgress-->
-                <attr name="originalFile" stringvalue="Actions/Remote/latexstudio-editor-remote-SaveProgress.instance"/>
-                <attr intvalue="3420" name="position"/>
-            </file>
-            <file name="latexstudio-editor-remote-UploadToDropbox.shadow">
-                <!--latexstudio.editor.remote.UploadToDropbox-->
-                <attr name="originalFile" stringvalue="Actions/Remote/latexstudio-editor-remote-UploadToDropbox.instance"/>
-                <attr intvalue="3433" name="position"/>
-            </file>
-        </folder>
         <folder name="Edit">
             <file name="latexstudio-editor-Redo.shadow">
                 <!--latexstudio.editor.toolbar.Redo-->
@@ -249,10 +166,6 @@
             </file>
         </folder>
         <folder name="Window">
-            <file name="latexstudio-editor-DropboxRevisionsTopComponent.shadow">
-                <!--latexstudio.editor.DropboxRevisionsTopComponent-->
-                <attr name="originalFile" stringvalue="Actions/Window/latexstudio-editor-DropboxRevisionsTopComponent.instance"/>
-            </file>
             <file name="latexstudio-editor-EditorTopComponent.shadow">
                 <!--latexstudio.editor.EditorTopComponent-->
                 <attr name="originalFile" stringvalue="Actions/Window/latexstudio-editor-EditorTopComponent.instance"/>
@@ -264,10 +177,6 @@
             <file name="latexstudio-editor-PDFViewerTopComponent.shadow">
                 <!--latexstudio.editor.PDFViewerTopComponent-->
                 <attr name="originalFile" stringvalue="Actions/Window/latexstudio-editor-PDFViewerTopComponent.instance"/>
-            </file>
-            <file name="latexstudio-editor-RevisionDisplayTopComponent.shadow">
-                <!--latexstudio.editor.RevisionDisplayTopComponent-->
-                <attr name="originalFile" stringvalue="Actions/Window/latexstudio-editor-RevisionDisplayTopComponent.instance"/>
             </file>
         </folder>
     </folder>
@@ -311,13 +220,6 @@
     </folder>
     <folder name="Windows2">
         <folder name="Components">
-            <file name="DropboxRevisionsTopComponent.settings">
-                <!--latexstudio.editor.DropboxRevisionsTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE settings PUBLIC "-//NetBeans//DTD Session settings 1.0//EN" "http://www.netbeans.org/dtds/sessionsettings-1_0.dtd">
-<settings version="1.0">
-  <instance class="latexstudio.editor.DropboxRevisionsTopComponent"/>
-</settings>
-]]></file>
             <file name="EditorTopComponent.settings">
                 <!--latexstudio.editor.EditorTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE settings PUBLIC "-//NetBeans//DTD Session settings 1.0//EN" "http://www.netbeans.org/dtds/sessionsettings-1_0.dtd">
@@ -339,33 +241,8 @@
   <instance class="latexstudio.editor.PDFViewerTopComponent"/>
 </settings>
 ]]></file>
-            <file name="RevisionDisplayTopComponent.settings">
-                <!--latexstudio.editor.RevisionDisplayTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE settings PUBLIC "-//NetBeans//DTD Session settings 1.0//EN" "http://www.netbeans.org/dtds/sessionsettings-1_0.dtd">
-<settings version="1.0">
-  <instance class="latexstudio.editor.RevisionDisplayTopComponent"/>
-</settings>
-]]></file>
         </folder>
         <folder name="Modes">
-            <folder name="output">
-                <file name="DropboxRevisionsTopComponent.wstcref">
-                    <!--latexstudio.editor.DropboxRevisionsTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE tc-ref PUBLIC "-//NetBeans//DTD Top Component in Mode Properties 2.0//EN" "http://www.netbeans.org/dtds/tc-ref2_0.dtd">
-<tc-ref version="2.0">
-  <tc-id id="DropboxRevisionsTopComponent"/>
-  <state opened="false"/>
-</tc-ref>
-]]></file>
-                <file name="OutputTopComponent.wstcref">
-                    <!--latexstudio.editor.OutputTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE tc-ref PUBLIC "-//NetBeans//DTD Top Component in Mode Properties 2.0//EN" "http://www.netbeans.org/dtds/tc-ref2_0.dtd">
-<tc-ref version="2.0">
-  <tc-id id="OutputTopComponent"/>
-  <state opened="true"/>
-</tc-ref>
-]]></file>
-            </folder>
             <folder name="editor">
                 <file name="EditorTopComponent.wstcref">
                     <!--latexstudio.editor.EditorTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
@@ -375,12 +252,14 @@
   <state opened="true"/>
 </tc-ref>
 ]]></file>
-                <file name="RevisionDisplayTopComponent.wstcref">
-                    <!--latexstudio.editor.RevisionDisplayTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+            </folder>
+            <folder name="output">
+                <file name="OutputTopComponent.wstcref">
+                    <!--latexstudio.editor.OutputTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE tc-ref PUBLIC "-//NetBeans//DTD Top Component in Mode Properties 2.0//EN" "http://www.netbeans.org/dtds/tc-ref2_0.dtd">
 <tc-ref version="2.0">
-  <tc-id id="RevisionDisplayTopComponent"/>
-  <state opened="false"/>
+  <tc-id id="OutputTopComponent"/>
+  <state opened="true"/>
 </tc-ref>
 ]]></file>
             </folder>
@@ -399,10 +278,6 @@
     <folder name="xml">
         <folder name="entities">
             <folder name="latexstudio_editor">
-                <file name="DropboxRevisions" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
-                    <!--latexstudio.editor.DropboxRevisionsTopComponent-->
-                    <attr name="hint.originalPublicID" stringvalue="-//latexstudio.editor//DropboxRevisions//EN"/>
-                </file>
                 <file name="Editor" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
                     <!--latexstudio.editor.EditorTopComponent-->
                     <attr name="hint.originalPublicID" stringvalue="-//latexstudio.editor//Editor//EN"/>
@@ -415,19 +290,11 @@
                     <!--latexstudio.editor.PDFViewerTopComponent-->
                     <attr name="hint.originalPublicID" stringvalue="-//latexstudio.editor//PDFViewer//EN"/>
                 </file>
-                <file name="RevisionDisplay" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
-                    <!--latexstudio.editor.RevisionDisplayTopComponent-->
-                    <attr name="hint.originalPublicID" stringvalue="-//latexstudio.editor//RevisionDisplay//EN"/>
-                </file>
             </folder>
         </folder>
         <folder name="memory">
             <folder name="latexstudio">
                 <folder name="editor">
-                    <file name="DropboxRevisionsTopComponent">
-                        <!--latexstudio.editor.DropboxRevisionsTopComponent-->
-                        <attr name="settings.providerPath" stringvalue="xml/lookups//latexstudio_editor/DropboxRevisions.instance"/>
-                    </file>
                     <file name="EditorTopComponent">
                         <!--latexstudio.editor.EditorTopComponent-->
                         <attr name="settings.providerPath" stringvalue="xml/lookups//latexstudio_editor/Editor.instance"/>
@@ -440,25 +307,11 @@
                         <!--latexstudio.editor.PDFViewerTopComponent-->
                         <attr name="settings.providerPath" stringvalue="xml/lookups//latexstudio_editor/PDFViewer.instance"/>
                     </file>
-                    <file name="RevisionDisplayTopComponent">
-                        <!--latexstudio.editor.RevisionDisplayTopComponent-->
-                        <attr name="settings.providerPath" stringvalue="xml/lookups//latexstudio_editor/RevisionDisplay.instance"/>
-                    </file>
                 </folder>
             </folder>
         </folder>
         <folder name="lookups">
             <folder name="latexstudio_editor">
-                <file name="DropboxRevisions.instance">
-                    <!--latexstudio.editor.DropboxRevisionsTopComponent-->
-                    <attr
-                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
-                    <attr
-                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
-                    <attr name="settings.instanceClass" stringvalue="latexstudio.editor.DropboxRevisionsTopComponent"/>
-                    <attr name="settings.instanceOf" stringvalue="latexstudio.editor.DropboxRevisionsTopComponent"/>
-                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
-                </file>
                 <file name="Editor.instance">
                     <!--latexstudio.editor.EditorTopComponent-->
                     <attr
@@ -487,16 +340,6 @@
                         methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
                     <attr name="settings.instanceClass" stringvalue="latexstudio.editor.PDFViewerTopComponent"/>
                     <attr name="settings.instanceOf" stringvalue="latexstudio.editor.PDFViewerTopComponent"/>
-                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
-                </file>
-                <file name="RevisionDisplay.instance">
-                    <!--latexstudio.editor.RevisionDisplayTopComponent-->
-                    <attr
-                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
-                    <attr
-                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
-                    <attr name="settings.instanceClass" stringvalue="latexstudio.editor.RevisionDisplayTopComponent"/>
-                    <attr name="settings.instanceOf" stringvalue="latexstudio.editor.RevisionDisplayTopComponent"/>
                     <attr boolvalue="true" name="xmlproperties.preventStoring"/>
                 </file>
             </folder>
