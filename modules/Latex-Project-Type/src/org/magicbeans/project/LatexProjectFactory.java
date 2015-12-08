@@ -23,7 +23,7 @@ import org.openide.util.lookup.ServiceProvider;
 @ServiceProvider(service=ProjectFactory.class)
 public class LatexProjectFactory implements ProjectFactory{
 
-    public static final String PROJECT_FILE = "*.tex";
+    public static final String PROJECT_FILE = "tex";
 
     //Specifies when a project is a project, i.e.,
     //if "customer.txt" is present in a folder:
@@ -31,7 +31,7 @@ public class LatexProjectFactory implements ProjectFactory{
     public boolean isProject(FileObject projectDirectory) {
         FileObject children[] = projectDirectory.getChildren();
         for (FileObject child:children){
-            if (child.getExt().equals("tex")){
+            if (child.getExt().equals(PROJECT_FILE)){
                 return true;
             }
         }
