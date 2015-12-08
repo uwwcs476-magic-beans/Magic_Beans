@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><module codename="org.custom.project">
-    <module_version install_time="1447280749094" last="true" origin="installer" specification_version="1.0">
-        <file crc="740685997" name="config/Modules/org-custom-project.xml"/>
-        <file crc="2884662926" name="modules/org-custom-project.jar"/>
-    </module_version>
-</module>
