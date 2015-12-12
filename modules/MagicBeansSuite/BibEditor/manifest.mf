@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+AutoUpdate-Show-In-Client: true
+Bundle-Localization: org/magicbeans/bibeditor/Bundle
+Bundle-Name: %OpenIDE-Module-Name
+Bundle-SymbolicName: org.magicbeans.bibeditor
+Bundle-Version: 1.0
+
