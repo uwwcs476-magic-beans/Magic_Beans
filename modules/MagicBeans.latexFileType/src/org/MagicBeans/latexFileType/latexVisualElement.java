@@ -9,6 +9,7 @@ import javax.swing.Action;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
 import javax.swing.JToolBar;
+import latexstudio.editor.pdf.PDFDisplay;
 import org.netbeans.core.spi.multiview.CloseOperationState;
 import org.netbeans.core.spi.multiview.MultiViewElement;
 import org.netbeans.core.spi.multiview.MultiViewElementCallback;
@@ -31,16 +32,23 @@ public final class latexVisualElement extends JPanel implements MultiViewElement
     private latexDataObject obj;
     private JToolBar toolbar = new JToolBar();
     private transient MultiViewElementCallback callback;
-
+    
+    private static final int DEFAULT_ZOOM = 100;
+    private static final int MIN_ZOOM = 25;
+    private static final int MAX_ZOOM = 400;
+    private static final int SPINNER_ZOOM_SIZE = 25;
+    private PDFDisplay pdfDisplay;
+    
     public latexVisualElement(Lookup lkp) {
         obj = lkp.lookup(latexDataObject.class);
         assert obj != null;
         initComponents();
+        pdfDisplay = new PDFDisplay();
     }
 
     @Override
     public String getName() {
-        return "latexVisualElement";
+        return "PDF View";
     }
 
     /**
@@ -55,11 +63,11 @@ public final class latexVisualElement extends JPanel implements MultiViewElement
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 509, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 411, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -67,7 +75,7 @@ public final class latexVisualElement extends JPanel implements MultiViewElement
     // End of variables declaration//GEN-END:variables
     @Override
     public JComponent getVisualRepresentation() {
-        return this;
+        return pdfDisplay.drawPreviewOnJPanel();
     }
 
     @Override
@@ -79,7 +87,7 @@ public final class latexVisualElement extends JPanel implements MultiViewElement
     public Action[] getActions() {
         return new Action[0];
     }
-
+    
     @Override
     public Lookup getLookup() {
         return obj.getLookup();

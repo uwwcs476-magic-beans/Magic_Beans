@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-@TemplateRegistration(folder = "Other", content = "latexTemplate.tex")
+@TemplateRegistration(folder = "LaTeX", content = "LaTeX")
 package org.MagicBeans.latexFileType;
 
 import org.netbeans.api.templates.TemplateRegistration;

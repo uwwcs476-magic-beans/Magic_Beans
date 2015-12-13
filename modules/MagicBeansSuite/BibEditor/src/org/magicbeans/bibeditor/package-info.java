@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-@TemplateRegistration(folder = "Other", content = "BibTemplate.bib")
+@TemplateRegistration(folder = "LaTeX", content = "BibTemplate.bib")
 package org.magicbeans.bibeditor;
 
 import org.netbeans.api.templates.TemplateRegistration;

@@ -1,3 +1,4 @@
+package org.MagicBeans.latexFileType;
 /*
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
  *
@@ -54,7 +55,7 @@ import org.openide.util.LookupListener;
  * Basic dummy implementation of NavigatorPanel interface.
  */
 @NavigatorPanel.Registration(mimeType="text/plain", displayName="Dummy View")
-public class BasicNavPanelImpl implements NavigatorPanel {
+public class LatexNavPane implements NavigatorPanel {
 
     /** holds UI of this panel */
     private JComponent panelUI;
@@ -67,7 +68,7 @@ public class BasicNavPanelImpl implements NavigatorPanel {
     private LookupListener contextL;
     
     /** public no arg constructor needed for system to instantiate provider well */
-    public BasicNavPanelImpl() {
+    public LatexNavPane() {
     }
 
     public String getDisplayHint() {

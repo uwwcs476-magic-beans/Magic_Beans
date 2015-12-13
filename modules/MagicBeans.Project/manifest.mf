@@ -1,6 +1,7 @@
 Manifest-Version: 1.0
 AutoUpdate-Show-In-Client: true
 OpenIDE-Module: org.magicbeans.project
+OpenIDE-Module-Install: org/magicbeans/project/Installer.class
 OpenIDE-Module-Localizing-Bundle: org/magicbeans/project/Bundle.properties
 OpenIDE-Module-Specification-Version: 1.0
 

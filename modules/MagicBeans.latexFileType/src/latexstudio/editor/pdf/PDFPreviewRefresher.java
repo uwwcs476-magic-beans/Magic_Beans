@@ -11,7 +11,7 @@ import java.util.logging.Logger;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JViewport;
-import latexstudio.editor.EditorTopComponent;
+import org.MagicBeans.Editor.EditorTopComponent;
 import latexstudio.editor.files.FileService;
 import latexstudio.editor.runtime.CommandLineBuilder;
 import latexstudio.editor.util.ApplicationUtils;
