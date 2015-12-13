@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+AutoUpdate-Show-In-Client: true
+OpenIDE-Module: org.MagicBeans.latexFileType
+OpenIDE-Module-Localizing-Bundle: org/MagicBeans/latexFileType/Bundle.properties
+OpenIDE-Module-Specification-Version: 1.0
+
