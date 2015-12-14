@@ -1,11 +1,11 @@
 # NetBeans specific #
-nbproject/private/
-build/
-nbbuild/
-dist/
-nbdist/
-nbactions.xml
-nb-configuration.xml
+*nbproject/private/
+*build/
+*nbbuild/
+*dist/
+*nbdist/
+*nbactions.xml
+*nb-configuration.xml
 
 *.class
 
@@ -21,3 +21,7 @@ nb-configuration.xml
 hs_err_pid*
 /modules/MagicBeans.Project/nbproject/private/
 /modules/MagicBeansSuite/nbproject/private/
+/modules/MagicBeans.LatexEditor/nbproject/private/
+/modules/MagicBeansSuite/sevenzipjbinding/nbproject/private/
+/modules/MagicBeans.latexFileType/nbproject/private/
+/modules/MagicBeansSuite/BibEditor/nbproject/private/
