@@ -3,15 +3,13 @@
  * 
  * See the file LICENSE for copying permission.
  */
-package org.MagicBeans.Editor;
+package latexstudio.editor.pdf;
 
 import java.awt.Color;
 import java.awt.Point;
 import javax.swing.JPanel;
 import javax.swing.JViewport;
-import latexstudio.editor.pdf.PDFDisplay;
-import latexstudio.editor.pdf.PDFPreviewRefresher;
-import latexstudio.editor.pdf.PDFService;
+import latexstudio.editor.pdf.PDFGenerator.PDFDisplay;
 import org.netbeans.api.settings.ConvertAsProperties;
 import org.openide.awt.ActionID;
 import org.openide.awt.ActionReference;
@@ -49,14 +47,14 @@ public final class PDFViewerTopComponent extends TopComponent {
     private static final int MAX_ZOOM = 400;
     private static final int SPINNER_ZOOM_SIZE = 25;
     
-    private final EditorTopComponent etc = new TopComponentFactory<EditorTopComponent>()
-            .getTopComponent(EditorTopComponent.class.getSimpleName());
 
     public PDFViewerTopComponent() {
         initComponents();
-        setName(Bundle.CTL_PDFViewerTopComponent());
-        setToolTipText(Bundle.HINT_PDFViewerTopComponent());
-        pdfDisplay = new PDFDisplay();
+        setName("PDF Preview");
+        setToolTipText("Show PDF Preview");
+    }
+    public static void setDisplay(PDFDisplay display){
+        pdfDisplay = display;
     }
 
     /**
@@ -243,17 +241,19 @@ public final class PDFViewerTopComponent extends TopComponent {
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
     
-    private PDFDisplay pdfDisplay;
+    private static PDFDisplay pdfDisplay;
+    public void refreshPDF(){
+        
+    }
     
     @Override
     public void componentOpened() {       
-        Thread refresher = new Thread(new PDFPreviewRefresher(jScrollPane1, etc, pdfDisplay));
-        refresher.start();
+//        Thread refresher = new Thread(new PDFPreviewRefresher(jScrollPane1, etc, pdfDisplay));
+//        refresher.start();
     }
 
     @Override
     public void componentClosed() {
-        PDFService.closeDocument();
     }
     
     private void refreshDisplayPane() {

@@ -3,15 +3,19 @@
  * 
  * See the file LICENSE for copying permission.
  */
-package org.MagicBeans.Editor;
+package latexstudio.editor.settings;
 
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
+import java.util.prefs.PreferenceChangeEvent;
+import java.util.prefs.PreferenceChangeListener;
+import java.util.prefs.Preferences;
 import javax.swing.JComponent;
 import javax.swing.SwingUtilities;
 import org.netbeans.spi.options.OptionsPanelController;
 import org.openide.util.HelpCtx;
 import org.openide.util.Lookup;
+import org.openide.util.NbPreferences;
 
 @OptionsPanelController.TopLevelRegistration(
         categoryName = "#OptionsCategory_Name_LaTeXSettings",
@@ -91,6 +95,25 @@ public final class LaTeXSettingsOptionsPanelController extends OptionsPanelContr
             pcs.firePropertyChange(OptionsPanelController.PROP_CHANGED, false, true);
         }
         pcs.firePropertyChange(OptionsPanelController.PROP_VALID, null, null);
+    }
+    private static String latexPath;
+    public static void initPrefListener(){        
+        Preferences pref = NbPreferences.forModule(LaTeXSettingsPanel.class);
+        String path = pref.get("latexPath", "");
+        pref.addPreferenceChangeListener(new PreferenceChangeListener() {
+            public void preferenceChange(PreferenceChangeEvent evt) {
+                if (evt.getKey().equals("latexPath")) {
+                    latexPath = evt.getNewValue();
+                }
+            }
+        });
+        latexPath = path;
+    }
+    public static String getLatexPath(){
+        if (latexPath == null){
+            initPrefListener();
+        }
+        return latexPath;
     }
 
 }

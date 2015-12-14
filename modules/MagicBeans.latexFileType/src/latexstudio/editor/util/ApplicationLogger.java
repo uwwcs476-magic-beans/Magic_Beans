@@ -10,7 +10,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import org.MagicBeans.Editor.OutputTopComponent;
-import org.MagicBeans.Editor.TopComponentFactory;
 
 /**
  * Class responsible for logging any information to the user's
@@ -20,8 +19,7 @@ import org.MagicBeans.Editor.TopComponentFactory;
  */
 public class ApplicationLogger {
     private final String loggerName;
-    private final OutputTopComponent otc = new TopComponentFactory<OutputTopComponent>()
-            .getTopComponent(OutputTopComponent.class.getSimpleName());
+    private final OutputTopComponent otc = new OutputTopComponent();
     private final DateFormat loggerDateFormat = new SimpleDateFormat("MMM dd HH:mm:ss");
     
     

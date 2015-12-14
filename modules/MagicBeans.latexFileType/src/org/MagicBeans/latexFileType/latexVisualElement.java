@@ -5,15 +5,22 @@
  */
 package org.MagicBeans.latexFileType;
 
+import java.io.File;
 import javax.swing.Action;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
 import javax.swing.JToolBar;
-import latexstudio.editor.pdf.PDFDisplay;
+import latexstudio.editor.pdf.PDFGenerator;
+import latexstudio.editor.pdf.PDFGenerator.PDFDisplay;
+import latexstudio.editor.settings.LaTeXSettingsOptionsPanelController;
+import latexstudio.editor.pdf.PDFViewerTopComponent;
 import org.netbeans.core.spi.multiview.CloseOperationState;
 import org.netbeans.core.spi.multiview.MultiViewElement;
 import org.netbeans.core.spi.multiview.MultiViewElementCallback;
 import org.openide.awt.UndoRedo;
+import org.openide.filesystems.FileChangeAdapter;
+import org.openide.filesystems.FileEvent;
+import org.openide.filesystems.FileObject;
 import org.openide.util.Lookup;
 import org.openide.util.NbBundle.Messages;
 import org.openide.windows.TopComponent;
@@ -38,14 +45,31 @@ public final class latexVisualElement extends JPanel implements MultiViewElement
     private static final int MAX_ZOOM = 400;
     private static final int SPINNER_ZOOM_SIZE = 25;
     private PDFDisplay pdfDisplay;
+    private PDFGenerator pdfGenerator;
+    private Object dobj;
     
     public latexVisualElement(Lookup lkp) {
         obj = lkp.lookup(latexDataObject.class);
         assert obj != null;
         initComponents();
-        pdfDisplay = new PDFDisplay();
+        pdfGenerator = new PDFGenerator(new File(obj.getPrimaryFile().toURI()));
+        pdfDisplay = pdfGenerator.getDisplay();
+        PDFViewerTopComponent.setDisplay(pdfDisplay);
+        obj.getPrimaryFile().addFileChangeListener(new FileChangeAdapter() {
+            @Override
+            public void fileChanged(FileEvent fe) {
+                refresh();
+            }
+        });
     }
-
+    private void refresh() {
+        try {
+            //TODO: call PDF Top component with the text
+            pdfGenerator.generate();
+            
+        } catch (Exception e) {
+        }
+    }
     @Override
     public String getName() {
         return "PDF View";
@@ -75,7 +99,7 @@ public final class latexVisualElement extends JPanel implements MultiViewElement
     // End of variables declaration//GEN-END:variables
     @Override
     public JComponent getVisualRepresentation() {
-        return pdfDisplay.drawPreviewOnJPanel();
+        return pdfGenerator.getDisplay().drawPreviewOnJPanel();
     }
 
     @Override

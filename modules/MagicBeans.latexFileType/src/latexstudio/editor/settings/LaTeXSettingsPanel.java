@@ -3,7 +3,7 @@
  * 
  * See the file LICENSE for copying permission.
  */
-package org.MagicBeans.Editor;
+package latexstudio.editor.settings;
 
 import java.io.File;
 import javax.swing.JOptionPane;

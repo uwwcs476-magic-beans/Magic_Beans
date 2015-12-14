@@ -19,10 +19,11 @@ public final class ApplicationUtils {
     
     private static final String HOME = System.getProperty("user.home");
     private static final String OS = System.getProperty("os.name");
-    private static final String APP_DIR_NAME = ".OpenLaTeXStudio";
+    private static final String APP_DIR_NAME = ".OpenLaTeXStudi";
     private static final String PREVIEW_SOURCE_FILENAME = "preview.tex";
     private static final String PREVIEW_PDF_FILENAME = "preview.pdf";
     private static final String SETTINGS_FILENAME = "settings.properties";
+    private static final String BUILD_DIR = "output";
     
     public static final String PDFLATEX = "pdflatex";
 
@@ -40,13 +41,15 @@ public final class ApplicationUtils {
             }
         }
     }
-    
-    public static String getTempSourceFile() {
-        return getAppDirectory().concat(File.separator).concat(PREVIEW_SOURCE_FILENAME);
+    public static String getBuildDirectory(String workingDir){
+        return workingDir.concat(File.separator).concat(BUILD_DIR);
+    }
+    public static String getTempSourceFile(String workingDir) {
+        return getBuildDirectory(workingDir).concat(File.separator).concat(PREVIEW_SOURCE_FILENAME);
     }
     
-    public static String getTempPDFFile() {
-        return getAppDirectory().concat(File.separator).concat(PREVIEW_PDF_FILENAME);
+    public static String getTempPDFFile(String workingDir) {
+        return getBuildDirectory(workingDir).concat(File.separator).concat(PREVIEW_PDF_FILENAME);
     }
     
     public static String getSettingsFile() {
@@ -72,14 +75,14 @@ public final class ApplicationUtils {
     }
     
     public static void deleteTempFiles() {
-        File source = new File(getTempSourceFile());
-        File tmpPdf = new File(getTempPDFFile());
-        if (source.exists()) {
-            source.delete();
-        }
-        if (tmpPdf.exists()) {
-            tmpPdf.delete();
-        }
+//        File source = new File(getTempSourceFile());
+//        File tmpPdf = new File(getTempPDFFile());
+//        if (source.exists()) {
+//            source.delete();
+//        }
+//        if (tmpPdf.exists()) {
+//            tmpPdf.delete();
+//        }
     }
     
     public static boolean isWindows() {
