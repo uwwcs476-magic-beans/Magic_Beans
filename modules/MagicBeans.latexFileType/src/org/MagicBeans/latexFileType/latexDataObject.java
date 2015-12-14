@@ -27,7 +27,7 @@ import org.openide.windows.TopComponent;
 @MIMEResolver.ExtensionRegistration(
         displayName = "#LBL_latex_LOADER",
         mimeType = "text/latex",
-        extension = {".tex"}
+        extension = {"tex"}
 )
 @DataObject.Registration(
         mimeType = "text/latex",
