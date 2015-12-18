@@ -3,28 +3,23 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package latexstudio.editor.pdf;
+package org.magicbeans.editor.pdf;
 
 import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
-import java.util.prefs.PreferenceChangeEvent;
-import java.util.prefs.PreferenceChangeListener;
-import java.util.prefs.Preferences;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import latexstudio.editor.files.FileService;
-import latexstudio.editor.runtime.CommandLineBuilder;
-import latexstudio.editor.runtime.CommandLineExecutor;
-import latexstudio.editor.settings.LaTeXSettingsOptionsPanelController;
-import latexstudio.editor.util.ApplicationUtils;
+import org.magicbeans.editor.runtime.CommandLineBuilder;
+import org.magicbeans.editor.runtime.CommandLineExecutor;
+import org.magicbeans.editor.settings.LaTeXSettingsOptionsPanelController;
+import org.magicbeans.editor.util.ApplicationUtils;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
 import org.openide.util.Exceptions;
-import org.openide.util.NbPreferences;
 
 /**
  *
@@ -90,9 +85,9 @@ public class PDFGenerator {
             pdfFile = new File(PDF_PATH);
             if (pdfFile.exists()) {
                 inputPDF = PDDocument.load(pdfFile);
-                List allPages = inputPDF.getDocumentCatalog().getAllPages();
+                List<PDPage> allPages = inputPDF.getDocumentCatalog().getAllPages();
                 if (allPages != null && !allPages.isEmpty() && allPages.size() >= number && number > 0) {
-                    page = (PDPage) allPages.get(number - 1);
+                    page = allPages.get(number - 1);
                 }
             }
         } catch (IOException ex) {

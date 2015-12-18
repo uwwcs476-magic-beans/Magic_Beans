@@ -3,7 +3,7 @@
  * 
  * See the file LICENSE for copying permission.
  */
-package latexstudio.editor.util;
+package org.magicbeans.editor.util;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;

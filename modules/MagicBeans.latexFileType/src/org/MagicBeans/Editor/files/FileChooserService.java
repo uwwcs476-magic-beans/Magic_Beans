@@ -3,7 +3,7 @@
  * 
  * See the file LICENSE for copying permission.
  */
-package latexstudio.editor.files;
+package org.magicbeans.editor.files;
 
 import java.io.File;
 import javax.swing.JFileChooser;

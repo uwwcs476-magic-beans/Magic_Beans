@@ -3,7 +3,7 @@
  * 
  * See the file LICENSE for copying permission.
  */
-package latexstudio.editor.settings;
+package org.magicbeans.editor.settings;
 
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
@@ -19,7 +19,7 @@ import org.openide.util.NbPreferences;
 
 @OptionsPanelController.TopLevelRegistration(
         categoryName = "#OptionsCategory_Name_LaTeXSettings",
-        iconBase = "latexstudio/editor/resources/icons/latex-ico.png",
+        iconBase = "org/magicbeans/editor/resources/icons/latex-ico.png",
         keywords = "#OptionsCategory_Keywords_LaTeXSettings",
         keywordsCategory = "LaTeXSettings"
 )

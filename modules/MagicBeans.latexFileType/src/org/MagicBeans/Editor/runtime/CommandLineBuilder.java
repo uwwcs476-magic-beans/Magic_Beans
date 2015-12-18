@@ -1,7 +1,7 @@
-package latexstudio.editor.runtime;
+package org.magicbeans.editor.runtime;
 
 import java.io.File;
-import latexstudio.editor.util.ApplicationLogger;
+import org.magicbeans.editor.util.ApplicationLogger;
 
 /**
  *

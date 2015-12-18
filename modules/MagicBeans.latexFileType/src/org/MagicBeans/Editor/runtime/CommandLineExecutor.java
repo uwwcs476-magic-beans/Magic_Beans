@@ -3,11 +3,11 @@
  * 
  * See the file LICENSE for copying permission.
  */
-package latexstudio.editor.runtime;
+package org.magicbeans.editor.runtime;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import latexstudio.editor.util.ApplicationUtils;
+import org.magicbeans.editor.util.ApplicationUtils;
 import org.apache.commons.exec.CommandLine;
 import org.apache.commons.exec.DefaultExecutor;
 import org.apache.commons.exec.ExecuteWatchdog;

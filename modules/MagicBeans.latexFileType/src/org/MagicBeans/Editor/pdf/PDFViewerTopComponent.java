@@ -3,13 +3,13 @@
  * 
  * See the file LICENSE for copying permission.
  */
-package latexstudio.editor.pdf;
+package org.magicbeans.editor.pdf;
 
 import java.awt.Color;
 import java.awt.Point;
 import javax.swing.JPanel;
 import javax.swing.JViewport;
-import latexstudio.editor.pdf.PDFGenerator.PDFDisplay;
+import org.magicbeans.editor.pdf.PDFGenerator.PDFDisplay;
 import org.netbeans.api.settings.ConvertAsProperties;
 import org.openide.awt.ActionID;
 import org.openide.awt.ActionReference;
@@ -29,7 +29,7 @@ import org.openide.windows.TopComponent;
         persistenceType = TopComponent.PERSISTENCE_ALWAYS
 )
 @TopComponent.Registration(mode = "rightSlidingSide", openAtStartup = true)
-@ActionID(category = "Window", id = "latexstudio.editor.PDFViewerTopComponent")
+@ActionID(category = "Window", id = "org.magicbeans.editor.pdf.PDFViewerTopComponent")
 @ActionReference(path = "Menu/Window" /*, position = 333 */)
 @TopComponent.OpenActionRegistration(
         displayName = "#CTL_PDFViewerAction",
@@ -126,7 +126,7 @@ public final class PDFViewerTopComponent extends TopComponent {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 74, Short.MAX_VALUE)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 266, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)

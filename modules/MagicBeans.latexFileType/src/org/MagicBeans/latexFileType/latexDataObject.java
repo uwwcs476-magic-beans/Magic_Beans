@@ -100,7 +100,7 @@ public class latexDataObject extends MultiDataObject {
     }
 
     @MultiViewElement.Registration(
-            displayName = "#LBL_latex_EDITOR",
+            displayName = "Source",
             iconBase = "org/MagicBeans/latexFileType/icon.png",
             mimeType = "text/latex",
             persistenceType = TopComponent.PERSISTENCE_ONLY_OPENED,

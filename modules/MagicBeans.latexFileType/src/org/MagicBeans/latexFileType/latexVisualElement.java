@@ -10,10 +10,10 @@ import javax.swing.Action;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
 import javax.swing.JToolBar;
-import latexstudio.editor.pdf.PDFGenerator;
-import latexstudio.editor.pdf.PDFGenerator.PDFDisplay;
-import latexstudio.editor.settings.LaTeXSettingsOptionsPanelController;
-import latexstudio.editor.pdf.PDFViewerTopComponent;
+import org.magicbeans.editor.pdf.PDFGenerator;
+import org.magicbeans.editor.pdf.PDFGenerator.PDFDisplay;
+import org.magicbeans.editor.settings.LaTeXSettingsOptionsPanelController;
+import org.magicbeans.editor.pdf.PDFViewerTopComponent;
 import org.netbeans.core.spi.multiview.CloseOperationState;
 import org.netbeans.core.spi.multiview.MultiViewElement;
 import org.netbeans.core.spi.multiview.MultiViewElementCallback;
@@ -66,7 +66,6 @@ public final class latexVisualElement extends JPanel implements MultiViewElement
         try {
             //TODO: call PDF Top component with the text
             pdfGenerator.generate();
-            this.updateUI();
             
         } catch (Exception e) {
         }

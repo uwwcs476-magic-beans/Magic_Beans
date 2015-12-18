@@ -40,8 +40,8 @@ public final class OutputTopComponent extends TopComponent {
 
     public OutputTopComponent() {
         initComponents();
-        setName(Bundle.CTL_OutputTopComponent());
-        setToolTipText(Bundle.HINT_OutputTopComponent());
+        setName(org.openide.util.NbBundle.getMessage(OutputTopComponent.class, "CTL_OutputTopComponent"));
+        setToolTipText(org.openide.util.NbBundle.getMessage(OutputTopComponent.class, "HINT_OutputTopComponent"));
     }
 
     /**

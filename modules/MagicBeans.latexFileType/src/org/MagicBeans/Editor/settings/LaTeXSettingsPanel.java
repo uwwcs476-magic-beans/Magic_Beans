@@ -3,12 +3,12 @@
  * 
  * See the file LICENSE for copying permission.
  */
-package latexstudio.editor.settings;
+package org.magicbeans.editor.settings;
 
 import java.io.File;
 import javax.swing.JOptionPane;
-import latexstudio.editor.files.FileChooserService;
-import latexstudio.editor.util.ApplicationUtils;
+import org.magicbeans.editor.files.FileChooserService;
+import org.magicbeans.editor.util.ApplicationUtils;
 import org.openide.util.NbPreferences;
 
 final class LaTeXSettingsPanel extends javax.swing.JPanel {
@@ -33,11 +33,9 @@ final class LaTeXSettingsPanel extends javax.swing.JPanel {
         jTextField1 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
 
-        setToolTipText(org.openide.util.NbBundle.getMessage(LaTeXSettingsPanel.class, "LaTeXSettingsPanel.jPanel1.border.title")); // NOI18N
-
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(org.openide.util.NbBundle.getMessage(LaTeXSettingsPanel.class, "LaTeXSettingsPanel.jPanel1.border.title"))); // NOI18N
-        jPanel1.setToolTipText(org.openide.util.NbBundle.getMessage(LaTeXSettingsPanel.class, "LaTeXSettingsPanel.toolTipText")); // NOI18N
-        jPanel1.setName(""); // NOI18N
+        jPanel1.setToolTipText(org.openide.util.NbBundle.getMessage(LaTeXSettingsPanel.class, "LaTeXSettingsPanel.jPanel1.toolTipText")); // NOI18N
+        jPanel1.setName(org.openide.util.NbBundle.getMessage(LaTeXSettingsPanel.class, "LaTeXSettingsPanel.jPanel1.border.title")); // NOI18N
 
         jTextField1.setText(org.openide.util.NbBundle.getMessage(LaTeXSettingsPanel.class, "LaTeXSettingsPanel.jTextField1.text")); // NOI18N
 
