@@ -66,6 +66,7 @@ public final class latexVisualElement extends JPanel implements MultiViewElement
         try {
             //TODO: call PDF Top component with the text
             pdfGenerator.generate();
+            this.updateUI();
             
         } catch (Exception e) {
         }

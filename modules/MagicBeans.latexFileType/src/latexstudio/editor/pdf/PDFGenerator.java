@@ -90,13 +90,13 @@ public class PDFGenerator {
             pdfFile = new File(PDF_PATH);
             if (pdfFile.exists()) {
                 inputPDF = PDDocument.load(pdfFile);
-                List<?> allPages = inputPDF.getDocumentCatalog().getAllPages();
+                List allPages = inputPDF.getDocumentCatalog().getAllPages();
                 if (allPages != null && !allPages.isEmpty() && allPages.size() >= number && number > 0) {
-                    page = (PDPage)allPages.get(number - 1);
+                    page = (PDPage) allPages.get(number - 1);
                 }
             }
         } catch (IOException ex) {
-            System.out.println(ex.getMessage());
+            
         }
         closeDocument();
         return page;
