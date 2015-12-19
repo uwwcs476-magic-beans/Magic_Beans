@@ -52,8 +52,11 @@ public final class latexVisualElement extends JPanel implements MultiViewElement
         obj = lkp.lookup(latexDataObject.class);
         assert obj != null;
         initComponents();
+        //Initialize the PDF Generator for this file
         pdfGenerator = new PDFGenerator(new File(obj.getPrimaryFile().toURI()));
+        //Get the PDfDisplay controller, which handles changing pages, zoom etc.
         pdfDisplay = pdfGenerator.getDisplay();
+        //Add the pdfDisplay to the PDFViewer, to show this file in the viewer.
         PDFViewerTopComponent.setDisplay(pdfDisplay);
         obj.getPrimaryFile().addFileChangeListener(new FileChangeAdapter() {
             @Override
@@ -63,8 +66,9 @@ public final class latexVisualElement extends JPanel implements MultiViewElement
         });
     }
     private void refresh() {
+        //Set this file as the display in the PDFViewerTopComponent
+        PDFViewerTopComponent.setDisplay(pdfDisplay);
         try {
-            //TODO: call PDF Top component with the text
             pdfGenerator.generate();
             
         } catch (Exception e) {
@@ -127,6 +131,7 @@ public final class latexVisualElement extends JPanel implements MultiViewElement
 
     @Override
     public void componentShowing() {
+        refresh();
     }
 
     @Override
@@ -135,6 +140,7 @@ public final class latexVisualElement extends JPanel implements MultiViewElement
 
     @Override
     public void componentActivated() {
+        refresh();
     }
 
     @Override

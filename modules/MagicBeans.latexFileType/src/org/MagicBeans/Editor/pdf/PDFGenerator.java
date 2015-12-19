@@ -38,6 +38,9 @@ public class PDFGenerator {
     public PDFDisplay getDisplay(){
         return display;
     }
+    /**
+     * Execute the latex command to generate the pdf temp file
+     */
     public void  generate(){
         CommandLineExecutor.executeGeneratePDF(new CommandLineBuilder()
                 .withPathToSource(file.getAbsolutePath())
@@ -107,6 +110,9 @@ public class PDFGenerator {
         }
     }
     
+    /**
+     * Controller for the pdf display. Handles paging, zooming and rendering the PDF image
+     */
     public class PDFDisplay {
 
         private int selectedPage;
