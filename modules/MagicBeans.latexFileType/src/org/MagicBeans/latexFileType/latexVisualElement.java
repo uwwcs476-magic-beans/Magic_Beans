@@ -54,7 +54,9 @@ public final class latexVisualElement extends JPanel implements MultiViewElement
         initComponents();
         //Initialize the PDF Generator for this file
 
+
         pdfGenerator = new PDFGenerator(new File(obj.getPrimaryFile().toURI()));
+
 
         //Get the PDfDisplay controller, which handles changing pages, zoom etc.
         pdfDisplay = pdfGenerator.getDisplay();
