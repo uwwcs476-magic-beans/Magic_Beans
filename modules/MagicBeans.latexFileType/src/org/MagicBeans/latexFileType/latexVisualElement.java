@@ -23,6 +23,7 @@ import org.openide.filesystems.FileEvent;
 import org.openide.filesystems.FileObject;
 import org.openide.util.Lookup;
 import org.openide.util.NbBundle.Messages;
+import org.openide.util.Utilities;
 import org.openide.windows.TopComponent;
 
 @MultiViewElement.Registration(
@@ -53,7 +54,8 @@ public final class latexVisualElement extends JPanel implements MultiViewElement
         assert obj != null;
         initComponents();
         //Initialize the PDF Generator for this file
-        pdfGenerator = new PDFGenerator(new File(obj.getPrimaryFile().toURI()));
+        File thisFile = Utilities.toFile(obj.getPrimaryFile().toURI());
+        pdfGenerator = new PDFGenerator(thisFile);
         //Get the PDfDisplay controller, which handles changing pages, zoom etc.
         pdfDisplay = pdfGenerator.getDisplay();
         //Add the pdfDisplay to the PDFViewer, to show this file in the viewer.
@@ -70,7 +72,6 @@ public final class latexVisualElement extends JPanel implements MultiViewElement
         PDFViewerTopComponent.setDisplay(pdfDisplay);
         try {
             pdfGenerator.generate();
-            
         } catch (Exception e) {
         }
     }
