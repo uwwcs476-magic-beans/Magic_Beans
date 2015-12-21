@@ -22,11 +22,13 @@ import org.openide.util.Exceptions;
  * @author Nicholas
  */
 public class PDFGenerator {
+    public static PDFGenerator currentGenerator = null;
     private PDFDisplay display;
     private String workingDir;
     private File file;
     public PDFGenerator(File file) {
         super();
+        currentGenerator = this;
         this.workingDir = file.getParentFile().getAbsolutePath();
         this.file = file;
         display = new PDFDisplay();
@@ -34,14 +36,22 @@ public class PDFGenerator {
     public PDFDisplay getDisplay(){
         return display;
     }
+    public void savePDF(){
+        File directory = FileChooserService.getSelectedDirectory("Choose");
+        generate(directory.getAbsolutePath(), file.getName());
+    }
     /**
      * Execute the latex command to generate the pdf temp file
      */
-    public void  generate(){
+    public void generate(){
+        generate(ApplicationUtils.getBuildDirectory(workingDir), "preview");
+    }
+    public void  generate(String outputDir, String jobName){
+        currentGenerator = this;
         CommandLineExecutor.executeGeneratePDF(new CommandLineBuilder()
                 .withPathToSource(file.getAbsolutePath())
-                .withOutputDirectory(ApplicationUtils.getBuildDirectory(workingDir))
-                .withJobname("preview")
+                .withOutputDirectory(outputDir)
+                .withJobname(jobName)
                 .withWorkingFile(file.getParentFile())
                 .withLatexPath(LaTeXSettingsOptionsPanelController.getLatexPath())
         );
