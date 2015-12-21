@@ -12,7 +12,7 @@ import org.apache.commons.exec.CommandLine;
 import org.apache.commons.exec.DefaultExecutor;
 import org.apache.commons.exec.ExecuteWatchdog;
 import org.apache.commons.exec.PumpStreamHandler;
-import org.openide.util.Exceptions;
+import org.apache.commons.io.IOUtils;
 
 /**
  * The class responsible for execution of commands in runtime and handling the outputs
@@ -42,25 +42,36 @@ public final class CommandLineExecutor {
         String job = cmd.getJobname() == null ? "" : "--jobname=" + cmd.getJobname().replaceAll(" ", "_");
         ByteArrayOutputStream outputStream = null;
         
-        String[] command =  new String[] {
-            outputDirectory, outputFormat, job, cmd.getPathToSource()
-        };
-        CommandLine cmdLine = new CommandLine(ApplicationUtils.getPathToTEX(cmd.getLatexPath()));
-        cmdLine.addArguments(command, ApplicationUtils.isWindows());
-        outputStream = new ByteArrayOutputStream();
-        PumpStreamHandler streamHandler = new PumpStreamHandler(outputStream);
-        EXECUTOR.setStreamHandler(streamHandler);
-        if (cmd.getWorkingFile() != null) {
-            EXECUTOR.setWorkingDirectory(cmd.getWorkingFile().getParentFile().getAbsoluteFile());
-        }
-        try {
-            EXECUTOR.execute(cmdLine);
-        } catch (IOException ex) {
-            Exceptions.printStackTrace(ex);
-        }
-        if (cmd.getLogger() != null) {
-            cmd.getLogger().log(cmdLine.toString());
-            cmd.getLogger().log(outputStream.toString());
+        try {           
+            String[] command =  new String[] {
+                outputDirectory, outputFormat, job, cmd.getPathToSource()
+            };
+         
+            CommandLine cmdLine = new CommandLine(ApplicationUtils.getPathToTEX(cmd.getLatexPath()));
+            //For windows, we set handling quoting to true
+            cmdLine.addArguments(command, ApplicationUtils.isWindows());
+            
+            outputStream = new ByteArrayOutputStream();
+            PumpStreamHandler streamHandler = new PumpStreamHandler(outputStream);
+            EXECUTOR.setStreamHandler(streamHandler);
+            
+            if (cmd.getWorkingFile() != null) {
+                EXECUTOR.setWorkingDirectory(cmd.getWorkingFile().getParentFile().getAbsoluteFile());
+            }
+            
+            EXECUTOR.execute(cmdLine);      
+
+            if (cmd.getLogger() != null) {
+                cmd.getLogger().log(cmdLine.toString());
+                cmd.getLogger().log(outputStream.toString());
+            }
+                        
+        } catch (IOException e) {
+            if (cmd.getLogger() != null) {
+                cmd.getLogger().log("The path to the pdflatex tool is incorrect or has not been set.");
+            }
+        } finally {
+            IOUtils.closeQuietly(outputStream);
         }
     }
 }

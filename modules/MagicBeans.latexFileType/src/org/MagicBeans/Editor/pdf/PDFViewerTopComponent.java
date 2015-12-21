@@ -19,10 +19,10 @@ import org.openide.windows.TopComponent;
 /**
  * Top component which displays something.
  */
-//@ConvertAsProperties(
-//        dtd = "-//magicbeans.editor//PDFViewer//EN",
-//        autostore = false
-//)
+@ConvertAsProperties(
+        dtd = "-//latexstudio.editor//PDFViewer//EN",
+        autostore = false
+)
 @TopComponent.Description(
         preferredID = "PDFViewerTopComponent",
         //iconBase="SET/PATH/TO/ICON/HERE", 

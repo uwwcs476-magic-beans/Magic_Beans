@@ -13,12 +13,12 @@ import java.util.List;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import org.apache.pdfbox.pdmodel.PDDocument;
-import org.apache.pdfbox.pdmodel.PDPage;
 import org.magicbeans.editor.runtime.CommandLineBuilder;
 import org.magicbeans.editor.runtime.CommandLineExecutor;
 import org.magicbeans.editor.settings.LaTeXSettingsOptionsPanelController;
 import org.magicbeans.editor.util.ApplicationUtils;
+import org.apache.pdfbox.pdmodel.PDDocument;
+import org.apache.pdfbox.pdmodel.PDPage;
 import org.openide.util.Exceptions;
 
 /**
@@ -54,23 +54,25 @@ public class PDFGenerator {
     private static final double SCALE_FACTOR = 0.4;
     private static final int SCALE_TYPE = Image.SCALE_SMOOTH;
     public Image buildPDFPreview(PDPage pdfPage, int zoom) {
+        if (pdfPage == null) {
+            return null;
+        }
+         
+
+        double newScale = SCALE_FACTOR * (((double)zoom)/100.0);
+        BufferedImage pageImage = null;
         try {
-            if (pdfPage == null) {
-                return null;
-            }
-            
-            
-            double newScale = SCALE_FACTOR * (((double)zoom)/100.0);
-            BufferedImage pageImage = null;
             pageImage = pdfPage.convertToImage();
             int width = (int) (newScale * pageImage.getWidth());
             int height = (int) (newScale * pageImage.getHeight());
             int type = pageImage.getType();
             
             return pageImage.getScaledInstance(width, height, SCALE_TYPE);
+            
         } catch (IOException ex) {
             Exceptions.printStackTrace(ex);
         }
+        
         return null;
     }
     private static PDDocument inputPDF;
@@ -82,17 +84,17 @@ public class PDFGenerator {
         PDPage page = null;
         
         File pdfFile = null;
-        pdfFile = new File(PDF_PATH);
-        if (pdfFile.exists()) {
-            try {
+        try {
+            pdfFile = new File(PDF_PATH);
+            if (pdfFile.exists()) {
                 inputPDF = PDDocument.load(pdfFile);
-                List<?> allPages = inputPDF.getDocumentCatalog().getAllPages();
+                List<PDPage> allPages = inputPDF.getDocumentCatalog().getAllPages();
                 if (allPages != null && !allPages.isEmpty() && allPages.size() >= number && number > 0) {
-                    page = (PDPage) allPages.get(number - 1);
+                    page = allPages.get(number - 1);
                 }
-            } catch (IOException ex) {
-                Exceptions.printStackTrace(ex);
             }
+        } catch (IOException ex) {
+            
         }
         closeDocument();
         return page;
