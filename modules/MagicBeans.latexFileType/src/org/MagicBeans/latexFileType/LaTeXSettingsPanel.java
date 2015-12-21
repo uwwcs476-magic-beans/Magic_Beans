@@ -3,12 +3,11 @@
  * 
  * See the file LICENSE for copying permission.
  */
-package org.magicbeans.editor.settings;
+package org.MagicBeans.latexFileType;
 
 import java.io.File;
 import javax.swing.JOptionPane;
-import org.magicbeans.editor.files.FileChooserService;
-import org.magicbeans.editor.util.ApplicationUtils;
+import org.MagicBeans.latexFileType.ApplicationUtils;
 import org.openide.util.NbPreferences;
 
 final class LaTeXSettingsPanel extends javax.swing.JPanel {

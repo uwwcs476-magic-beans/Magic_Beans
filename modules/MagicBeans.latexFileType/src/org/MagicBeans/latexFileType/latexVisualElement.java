@@ -5,15 +5,12 @@
  */
 package org.MagicBeans.latexFileType;
 
+import java.awt.GridBagLayout;
 import java.io.File;
 import javax.swing.Action;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
 import javax.swing.JToolBar;
-import org.magicbeans.editor.pdf.PDFGenerator;
-import org.magicbeans.editor.pdf.PDFGenerator.PDFDisplay;
-import org.magicbeans.editor.settings.LaTeXSettingsOptionsPanelController;
-import org.magicbeans.editor.pdf.PDFViewerTopComponent;
 import org.netbeans.core.spi.multiview.CloseOperationState;
 import org.netbeans.core.spi.multiview.MultiViewElement;
 import org.netbeans.core.spi.multiview.MultiViewElementCallback;
@@ -24,6 +21,8 @@ import org.openide.filesystems.FileObject;
 import org.openide.util.Lookup;
 import org.openide.util.NbBundle.Messages;
 import org.openide.windows.TopComponent;
+import org.MagicBeans.latexFileType.PDFGenerator.PDFDisplay;
+import org.openide.util.Utilities;
 
 @MultiViewElement.Registration(
         displayName = "#LBL_latex_VISUAL",
@@ -44,16 +43,18 @@ public final class latexVisualElement extends JPanel implements MultiViewElement
     private static final int MIN_ZOOM = 25;
     private static final int MAX_ZOOM = 400;
     private static final int SPINNER_ZOOM_SIZE = 25;
+    
     private PDFDisplay pdfDisplay;
     private PDFGenerator pdfGenerator;
     private Object dobj;
     
     public latexVisualElement(Lookup lkp) {
+        toolbar.setLayout(new GridBagLayout());
         obj = lkp.lookup(latexDataObject.class);
         assert obj != null;
         initComponents();
         //Initialize the PDF Generator for this file
-        pdfGenerator = new PDFGenerator(new File(obj.getPrimaryFile().toURI()));
+        pdfGenerator = new PDFGenerator(Utilities.toFile(obj.getPrimaryFile().toURI()));
 
 
         //Get the PDfDisplay controller, which handles changing pages, zoom etc.
@@ -108,11 +109,6 @@ public final class latexVisualElement extends JPanel implements MultiViewElement
     }
 
     @Override
-    public JComponent getToolbarRepresentation() {
-        return toolbar;
-    }
-
-    @Override
     public Action[] getActions() {
         return new Action[0];
     }
@@ -161,6 +157,11 @@ public final class latexVisualElement extends JPanel implements MultiViewElement
     @Override
     public CloseOperationState canCloseElement() {
         return CloseOperationState.STATE_OK;
+    }
+
+    @Override
+    public JComponent getToolbarRepresentation() {
+        return toolbar;
     }
 
 }

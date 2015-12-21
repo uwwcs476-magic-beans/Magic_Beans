@@ -3,7 +3,7 @@
  * 
  * See the file LICENSE for copying permission.
  */
-package org.magicbeans.editor.util;
+package org.MagicBeans.latexFileType;
 
 import java.io.File;
 import java.io.IOException;
@@ -42,6 +42,7 @@ public final class ApplicationUtils {
         }
     }
     public static String getBuildDirectory(String workingDir){
+        createBuildDirectory(workingDir);
         return workingDir.concat(File.separator).concat(BUILD_DIR);
     }
     public static String getTempSourceFile(String workingDir) {
@@ -73,7 +74,20 @@ public final class ApplicationUtils {
         }
         return tempDir.getAbsolutePath();
     }
-    
+    public static void createBuildDirectory(String workingDir){
+        String path = addTrailingSlash(workingDir)+BUILD_DIR;
+        File outputDir = new File(path);
+        if (!outputDir.exists()){
+            outputDir.mkdir();
+        }
+    }
+    public static String addTrailingSlash(String path){
+        if (path.endsWith(File.separator)) {
+            return path;
+        } else {
+            return path.concat(File.separator);
+        }
+    }
     public static void deleteTempFiles() {
 //        File source = new File(getTempSourceFile());
 //        File tmpPdf = new File(getTempPDFFile());

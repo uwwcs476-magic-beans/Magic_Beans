@@ -3,7 +3,7 @@
  * 
  * See the file LICENSE for copying permission.
  */
-package org.magicbeans.editor.settings;
+package org.MagicBeans.latexFileType;
 
 import java.util.Properties;
 

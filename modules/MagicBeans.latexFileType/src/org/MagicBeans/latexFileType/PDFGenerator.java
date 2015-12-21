@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.magicbeans.editor.pdf;
+package org.MagicBeans.latexFileType;
 
 import java.awt.Image;
 import java.awt.image.BufferedImage;
@@ -13,10 +13,6 @@ import java.util.List;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import org.magicbeans.editor.runtime.CommandLineBuilder;
-import org.magicbeans.editor.runtime.CommandLineExecutor;
-import org.magicbeans.editor.settings.LaTeXSettingsOptionsPanelController;
-import org.magicbeans.editor.util.ApplicationUtils;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
 import org.openide.util.Exceptions;
@@ -72,7 +68,7 @@ public class PDFGenerator {
         } catch (IOException ex) {
             Exceptions.printStackTrace(ex);
         }
-        
+        closeDocument();
         return null;
     }
     private static PDDocument inputPDF;
@@ -94,9 +90,8 @@ public class PDFGenerator {
                 }
             }
         } catch (IOException ex) {
-            
+            return null;
         }
-        closeDocument();
         return page;
     }
     

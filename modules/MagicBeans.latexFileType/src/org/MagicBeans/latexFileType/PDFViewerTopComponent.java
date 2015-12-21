@@ -3,13 +3,13 @@
  * 
  * See the file LICENSE for copying permission.
  */
-package org.magicbeans.editor.pdf;
+package org.MagicBeans.latexFileType;
 
 import java.awt.Color;
 import java.awt.Point;
 import javax.swing.JPanel;
 import javax.swing.JViewport;
-import org.magicbeans.editor.pdf.PDFGenerator.PDFDisplay;
+import org.MagicBeans.latexFileType.PDFGenerator.PDFDisplay;
 import org.netbeans.api.settings.ConvertAsProperties;
 import org.openide.awt.ActionID;
 import org.openide.awt.ActionReference;

@@ -1,7 +1,7 @@
-package org.magicbeans.editor.runtime;
+package org.MagicBeans.latexFileType;
 
 import java.io.File;
-import org.magicbeans.editor.util.ApplicationLogger;
+import org.MagicBeans.latexFileType.ApplicationLogger;
 
 /**
  *

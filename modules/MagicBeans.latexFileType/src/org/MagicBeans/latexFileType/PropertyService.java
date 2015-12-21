@@ -3,7 +3,7 @@
  * 
  * See the file LICENSE for copying permission.
  */
-package org.magicbeans.editor.util;
+package org.MagicBeans.latexFileType;
 
 import java.io.IOException;
 import java.io.InputStream;
